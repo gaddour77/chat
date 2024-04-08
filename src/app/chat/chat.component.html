@@ -1,0 +1,11 @@
+<div class="chat-window">
+    <ul class="messages">
+      <li *ngFor="let message of messages">
+        <b>{{ message.sender }}:</b> {{ message.content }} <small>{{ message.date | date:'medium' }}</small>
+      </li>
+    </ul>
+    <input type="text" [(ngModel)]="newMessageContent" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+  <script src="assets/sockjs.min.js"></script>
+<script src="assets/stomp.min.js"></script>

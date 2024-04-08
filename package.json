@@ -19,7 +19,9 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "rxjs": "~7.8.0",
+    "socket.io": "^4.7.5",
     "tslib": "^2.3.0",
+    "webstomp-client": "^1.2.6",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "webstomp-client"
+            ],
             "outputPath": "dist/messaging",
             "index": "src/index.html",
             "main": "src/main.ts",
