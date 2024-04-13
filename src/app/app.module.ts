@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms'; // Importez FormsModule ici
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component'; // Assurez-vous que le chemin vers votre composant est correct
+import { RxStompService } from './rx-stomp.service';
+import {rxStompServiceFactory} from './rx-stomp-service-factory'
+import { HttpClientModule } from '@angular/common/http';
+
+
 // Importez d'autres composants et services comme nécessaire
 
 @NgModule({
@@ -15,10 +20,14 @@ import { ChatComponent } from './chat/chat.component'; // Assurez-vous que le ch
   imports: [
     BrowserModule,
     FormsModule, 
-    AppRoutingModule// Ajoutez FormsModule aux imports
+    AppRoutingModule,
+    HttpClientModule// Ajoutez FormsModule aux imports
     // Ajoutez d'autres modules ici
   ],
-  providers: [],
+  providers: [ {
+    provide: RxStompService,
+    useFactory: rxStompServiceFactory,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

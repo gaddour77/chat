@@ -14,7 +14,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "webstomp-client"
+              "webstomp-client",
+              "sockjs-client"
             ],
             "outputPath": "dist/messaging",
             "index": "src/index.html",
@@ -75,7 +76,9 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "messaging:build"
+            
           }
+          
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

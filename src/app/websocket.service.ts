@@ -1,6 +1,10 @@
 import * as Stomp from 'webstomp-client';
+import * as SockJS from 'sockjs-client';
+
 import { Injectable } from '@angular/core';
 import { ChatMessage } from './models/chat-message.model';
+import { RxStomp } from '@stomp/rx-stomp';
+ 
 
 
 @Injectable({
@@ -8,12 +12,13 @@ import { ChatMessage } from './models/chat-message.model';
 })
 export class WebSocketService {
   private client  !: Stomp.Client;
-  private url = 'wss://localhost:8084/ws'; // URL de votre WebSocket
+  private url = 'http://localhost:8084/ws'; // URL de votre WebSocket
 
   constructor() { }
 
   connect(onMessageReceived: (message:ChatMessage) => void) {
-    const socket = new WebSocket(this.url);
+    
+    const socket = new SockJS(this.url);
     this.client = Stomp.over(socket);
 
     this.client.connect({}, frame => {

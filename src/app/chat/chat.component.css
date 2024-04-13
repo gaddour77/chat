@@ -1,0 +1,39 @@
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .message-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .message-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .message-header {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .sender {
+    font-weight: bold;
+  }
+  
+  .timestamp {
+    float: right;
+  }
+  
+  .message-content {
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
